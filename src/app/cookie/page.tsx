@@ -11,6 +11,13 @@ export default function Cookie() {
         console.log(res)
      
     }
+    const handlegetCookie = async() => {
+
+        const res = await axios.get('/api/accessCookie');
+
+        console.log(res)
+     
+    }
 
 
 
@@ -19,6 +26,7 @@ export default function Cookie() {
             <label htmlFor="name" className="p-2 m-2">Name</label>
             <input type="text" className="p-2 px-2 m-2 rounded-2xl" placeholder="Name" value={Name} onChange={(e) => setName(e.target.value)} id="name" />
             <h1 onClick={handleCookie} className="text-3xl cursor-pointer text-white bg-slate-800 p-4 rounded-2xl">Cookie</h1>
+            <h2 className="text-3xl cursor-pointer text-white bg-slate-800 p-4 rounded-2xl m-2"onClick={handlegetCookie}>Get your cookie</h2>
         </div>
     );
 }
